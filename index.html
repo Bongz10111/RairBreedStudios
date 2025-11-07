@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelCraft Studios | Professional Web Design Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --black: #121212;
+            --dark-grey: #2d2d2d;
+            --medium-grey: #4a4a4a;
+            --light-grey: #e0e0e0;
+            --off-white: #f8f8f8;
+            --accent: #6b6b6b;
+            --link-color: #8a8a8a;
+            --link-hover: #a8a8a8;
+            --glow-color: rgba(168, 168, 168, 0.4);
+            --red-glow: rgba(220, 53, 69, 0.6);
+            --red-accent: #dc3545;
+            --form-bg: #f0f0f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--off-white);
+            color: var(--dark-grey);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-grey);
+            color: var(--off-white);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--medium-grey);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--black);
+            color: var(--off-white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--off-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .logo:hover {
+            text-shadow: 0 0 10px var(--red-glow);
+        }
+        
+        .logo span {
+            color: var(--light-grey);
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .desktop-nav ul li {
+            margin-left: 30px;
+        }
+        
+        .desktop-nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .desktop-nav ul li a:hover {
+            color: var(--light-grey);
+            text-shadow: 0 0 8px var(--red-glow);
+        }
+        
+        .desktop-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--red-accent);
+            transition: width 0.3s ease;
+        }
+        
+        .desktop-nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--off-white);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: var(--black);
+            padding: 80px 30px 30px;
+            transition: right 0.3s ease;
+            z-index: 999;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 20px;
+        }
+        
+        .mobile-nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--dark-grey);
+        }
+        
+        .mobile-nav ul li a:hover {
+            color: var(--red-accent);
+            padding-left: 10px;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--off-white);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--off-white);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--off-white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--dark-grey);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, var(--glow-color) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-grey);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--light-grey);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-img {
+            height: 200px;
+            background-color: var(--medium-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--off-white);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, var(--glow-color) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-img::before {
+            opacity: 1;
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .portfolio-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .portfolio-link:hover {
+            color: var(--red-accent);
+            text-shadow: 0 0 5px var(--red-glow);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--form-bg);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            width: 20px;
+            color: var(--medium-grey);
+        }
+        
+        .contact-social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--dark-grey);
+            color: var(--off-white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+        
+        .contact-social-link:hover {
+            background-color: var(--red-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--red-glow);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            border-left: 4px solid var(--red-accent);
+        }
+        
+        .contact-form:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-grey);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-grey);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #fafafa;
+        }
+        
+        .form-control:focus {
+            border-color: var(--red-accent);
+            box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+            outline: none;
+            background-color: white;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--red-accent);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+        }
+
+        .note {
+            font-size: 14px;
+            color: var(--medium-grey);
+            font-style: italic;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 3px solid var(--red-accent);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--off-white);
+            padding: 40px 0 20px;
+            transition: all 0.3s ease;
+        }
+        
+        footer:hover {
+            box-shadow: 0 0 20px var(--red-glow);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        .footer-column h3 {
+            color: var(--off-white);
+            margin-bottom: 20px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column:hover h3 {
+            text-shadow: 0 0 8px var(--red-glow);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: var(--light-grey);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+            text-shadow: 0 0 5px var(--red-glow);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--dark-grey);
+            color: var(--light-grey);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Pixel<span>Craft</span> Studios</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Overlay for mobile menu -->
+        <div class="overlay"></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Web Design for Small Businesses</h1>
+            <p>We create stunning, responsive websites that help your business stand out and grow online.</p>
+            <a href="#contact" class="btn">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Website Design</h3>
+                    <p>Custom, responsive website designs tailored to your business needs and brand identity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Website Development</h3>
+                    <p>Clean, efficient code that brings your design to life with optimal performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Website Updates</h3>
+                    <p>Keep your website fresh and up-to-date with new content, features, and design improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #4a4a4a;">
+                        <i class="fas fa-spa" style="font-size: 48px;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Nail Salon</h3>
+                        <p>A responsive website with online booking system for a local Nail Salon.</p>
+                        <div class="portfolio-links">
+                            <a href="http://127.0.0.1:5500/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #5a5a5a;">
+                        <i class="fas fa-user-tie" style="font-size: 48px;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Influencer Website</h3>
+                        <p>A modern website with a booking session with talent management.</p>
+                        <div class="portfolio-links">
+                            <a href="http://127.0.0.1:5503/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background-color: #6a6a6a;">
+                        <i class="fas fa-hotel" style="font-size: 48px;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Hospitality Website</h3>
+                        <p>A professional website showcasing services and expertise for a Hospitality business.</p>
+                        <div class="portfolio-links">
+                            <a href="http://127.0.0.1:5502/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Discuss Your Project</h3>
+                    <p>Ready to take your online presence to the next level? Fill out the form and we'll get back to you within 24 hours.</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> bonganemata@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 0672695851</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cape Town</p>
+                    </div>
+                    <div class="contact-social-links">
+                        <a href="https://wa.me/+27672695851" class="contact-social-link" title="Contact us on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:bonganemata@gmail.com" class="contact-social-link" title="Send us an email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="projectForm" action="https://formsubmit.co/bonganemata@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Project Inquiry - PixelCraft Studios">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="#">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input type="text" id="surname" name="surname" class="form-control" placeholder="Your Surname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Contact Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="about">Tell us what your website is about</label>
+                            <textarea id="about" name="about" class="form-control" placeholder="Describe your business and website goals..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="requirements">What do you want the website to do?</label>
+                            <textarea id="requirements" name="requirements" class="form-control" placeholder="List the features and functionality you need..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">What is your budget?</label>
+                            <select id="budget" name="budget" class="form-control" required>
+                                <option value="" disabled selected>Select your budget range</option>
+                                <option value="under-1000">Start from R3,000</option>
+                                <option value="1000-2500">R3,500 - R4,500</option>
+                                <option value="2500-5000">R4,500 - R5,500</option>
+                                <option value="5000-plus">R5,500+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="note">Note: Prices exclude domain name and hosting platform.</p>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Project Details</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PixelCraft Studios</h3>
+                    <p>Professional web design and development services for small businesses.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <a href="https://wa.me/+27672695851"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:bonganemata@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PixelCraft Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        
+        mobileNavToggle.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (mobileNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on overlay or a link
+        overlay.addEventListener('click', closeMobileMenu);
+        
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        function closeMobileMenu() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset icon to bars
+            const icon = mobileNavToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+        
+        // Form submission handling
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            // FormSubmit will handle the submission
+            // You can add additional client-side validation here if needed
+            
+            // Show a custom success message
+            setTimeout(function() {
+                alert('Thank you! Your project details have been submitted. We will contact you within 48 hours.');
+            }, 1000);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
