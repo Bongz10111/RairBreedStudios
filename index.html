@@ -789,12 +789,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="projectForm" action="https://formsubmit.co/bonganemata@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Project Inquiry - PixelCraft Studios">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="#">
-                        
+                    <form id="projectForm" onsubmit="sendEmail()">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -823,10 +818,10 @@
                             <label for="budget">What is your budget?</label>
                             <select id="budget" name="budget" class="form-control" required>
                                 <option value="" disabled selected>Select your budget range</option>
-                                <option value="under-1000">Start from R3,000</option>
-                                <option value="1000-2500">R3,500 - R4,500</option>
-                                <option value="2500-5000">R4,500 - R5,500</option>
-                                <option value="5000-plus">R5,500+</option>
+                                <option value="Start from R3,000">Start from R3,000</option>
+                                <option value="R3,500 - R4,500">R3,500 - R4,500</option>
+                                <option value="R4,500 - R5,500">R4,500 - R5,500</option>
+                                <option value="R5,500+">R5,500+</option>
                             </select>
                         </div>
 
@@ -834,7 +829,7 @@
                             <p class="note">Note: Prices exclude domain name and hosting platform.</p>
                         </div>
 
-                        <button type="submit" class="submit-btn">Submit Project Details</button>
+                        <button type="submit" class="submit-btn">Send Project Details via Email</button>
                     </form>
                 </div>
             </div>
@@ -868,6 +863,50 @@
     </footer>
 
     <script>
+        function sendEmail() {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const about = document.getElementById('about').value;
+            const requirements = document.getElementById('requirements').value;
+            const budget = document.getElementById('budget').value;
+            
+            // Create email content
+            const subject = `New Project Inquiry from ${name} ${surname}`;
+            const body = `
+New Project Inquiry - PixelCraft Studios
+
+Client Information:
+Name: ${name} ${surname}
+Email: ${email}
+Phone: ${phone}
+
+Project Details:
+Website About: ${about}
+Requirements: ${requirements}
+Budget: ${budget}
+
+Submitted via PixelCraft Studios Website
+            `.trim();
+            
+            // Create mailto link
+            const mailtoLink = `mailto:bonganemata@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            setTimeout(function() {
+                alert('Thank you! Your email client should open with all your details. Just click "Send" to submit your project inquiry.');
+            }, 500);
+            
+            return false;
+        }
+
         // Mobile Navigation Toggle
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
@@ -907,17 +946,6 @@
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
-        
-        // Form submission handling
-        document.getElementById('projectForm').addEventListener('submit', function(e) {
-            // FormSubmit will handle the submission
-            // You can add additional client-side validation here if needed
-            
-            // Show a custom success message
-            setTimeout(function() {
-                alert('Thank you! Your project details have been submitted. We will contact you within 48 hours.');
-            }, 1000);
-        });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
