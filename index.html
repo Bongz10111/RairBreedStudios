@@ -526,20 +526,20 @@
             font-size: 24px;
             margin-bottom: 15px;
         }
-        
-        /* Portfolio Section */
-        .portfolio {
+
+        /* Who We Help Section */
+        .who-we-help {
             background-color: var(--dark-grey);
             position: relative;
         }
         
-        .portfolio-grid {
+        .audience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .portfolio-item {
+        .audience-item {
             background: linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(10, 10, 15, 0.9));
             border-radius: 10px;
             overflow: hidden;
@@ -548,66 +548,51 @@
             border: 1px solid rgba(0, 255, 255, 0.1);
         }
         
-        .portfolio-item:hover {
+        .audience-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 255, 0.2);
         }
         
-        .portfolio-img {
-            height: 220px;
-            background: linear-gradient(45deg, var(--medium-grey), var(--dark-grey));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--off-white);
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .portfolio-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(0, 255, 255, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-img::before {
-            opacity: 1;
-        }
-        
-        .portfolio-content {
+        .audience-header {
             padding: 25px;
-        }
-        
-        .portfolio-content h3 {
-            margin-bottom: 10px;
-        }
-        
-        .portfolio-links {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .portfolio-link {
-            color: var(--blue-accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 5px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #4a4a4a, #2d2d2d);
+            color: white;
         }
         
-        .portfolio-link:hover {
-            color: var(--red-accent);
-            text-shadow: 0 0 5px var(--red-glow);
+        .audience-header h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .toggle-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            color: var(--blue-accent);
+        }
+        
+        .audience-item.active .toggle-icon {
+            transform: rotate(45deg);
+        }
+        
+        .audience-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .audience-item.active .audience-content {
+            padding: 25px;
+            max-height: 500px;
+        }
+        
+        .audience-content p {
+            margin-bottom: 0;
+            color: var(--light-grey);
         }
         
         /* Contact Section */
@@ -885,7 +870,7 @@
                 padding: 120px 0;
             }
             
-            .service-card, .portfolio-item {
+            .service-card, .audience-item {
                 margin: 0 10px;
             }
             
@@ -904,7 +889,7 @@
             }
             
             .services-grid,
-            .portfolio-grid {
+            .audience-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -955,7 +940,7 @@
                 font-size: 26px;
             }
             
-            .service-card, .portfolio-item {
+            .service-card, .audience-item {
                 margin: 0 5px;
             }
         }
@@ -1028,7 +1013,7 @@
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#who-we-help">Who We Help</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
@@ -1043,7 +1028,7 @@
         <nav class="mobile-nav">
             <ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#who-we-help">Who We Help</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
             
@@ -1104,47 +1089,65 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Who We Help Section -->
+    <section id="who-we-help" class="who-we-help">
         <div class="container">
             <div class="section-title">
-                <h2>OUR WORK</h2>
+                <h2>WHO WE HELP</h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-img" style="background: linear-gradient(45deg, #4a4a4a, #2d2d2d);">
-                        <i class="fas fa-spa" style="font-size: 48px;"></i>
+            <div class="audience-grid">
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Startups</h3>
+                        <span class="toggle-icon">+</span>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Nail Salon</h3>
-                        <p>A responsive website with online booking system for a local Nail Salon.</p>
-                        <div class="portfolio-links">
-                            <a href="http://127.0.0.1:5500/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        </div>
+                    <div class="audience-content">
+                        <p>Get online fast with powerful branding that establishes your presence and helps you stand out in a competitive market. We create websites that grow with your business.</p>
                     </div>
                 </div>
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-img" style="background: linear-gradient(45deg, #5a5a5a, #3d3d3d);">
-                        <i class="fas fa-user-tie" style="font-size: 48px;"></i>
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Small & Local Businesses</h3>
+                        <span class="toggle-icon">+</span>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Talent Management Website</h3>
-                        <p>A modern website with a booking session with talent management.</p>
-                        <div class="portfolio-links">
-                            <a href="http://127.0.0.1:5503/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        </div>
+                    <div class="audience-content">
+                        <p>Grow your presence and attract customers with a professional website that showcases your products and services. We help local businesses establish a strong online footprint.</p>
                     </div>
                 </div>
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-img" style="background: linear-gradient(45deg, #6a6a6a, #4d4d4d);">
-                        <i class="fas fa-hotel" style="font-size: 48px;"></i>
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Entrepreneurs</h3>
+                        <span class="toggle-icon">+</span>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Hospitality Website</h3>
-                        <p>A professional website showcasing services and expertise for a Hospitality business.</p>
-                        <div class="portfolio-links">
-                            <a href="http://127.0.0.1:5502/index.html" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
-                        </div>
+                    <div class="audience-content">
+                        <p>Turn your vision into a professional website that communicates your unique value proposition. We help entrepreneurs build credibility and attract their first customers.</p>
+                    </div>
+                </div>
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Creatives & Influencers</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="audience-content">
+                        <p>Build a unique online identity that showcases your talent and connects with your audience. We design portfolio websites that highlight your work and personality.</p>
+                    </div>
+                </div>
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Online Stores</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="audience-content">
+                        <p>Sell products with modern e-commerce solutions that are easy to manage and optimized for conversions. We build online stores that provide seamless shopping experiences.</p>
+                    </div>
+                </div>
+                <div class="audience-item fade-in">
+                    <div class="audience-header">
+                        <h3>Service Providers</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="audience-content">
+                        <p>Whether you're a salon, mechanic, tutor, fitness coach, or other service professional, we create websites that highlight your expertise and make it easy for clients to book your services.</p>
                     </div>
                 </div>
             </div>
@@ -1160,7 +1163,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Let's Build Your Future Online</h3>
-                    <p>Starting out or ready for a refresh? Fill out the form, and we’ll reach out within a day to help you get your website moving in the right direction..</p>
+                    <p>Starting out or ready for a refresh? Fill out the form, and we'll reach out within a day to help you get your website moving in the right direction..</p>
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> bonganemata@gmail.com</p>
                         <p><i class="fas fa-phone"></i> 0672695851</p>
@@ -1219,7 +1222,7 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <a href="#services">Services</a>
-                    <a href="#portfolio">Portfolio</a>
+                    <a href="#who-we-help">Who We Help</a>
                     <a href="#contact">Contact Us</a>
                 </div>
                 <div class="footer-column">
@@ -1245,7 +1248,6 @@
             const phone = document.getElementById('phone').value;
             const about = document.getElementById('about').value;
             const requirements = document.getElementById('requirements').value;
-            const budget = document.getElementById('budget').value;
             
             // Create email content
             const subject = `New Project Inquiry from ${name} ${surname}`;
@@ -1260,7 +1262,6 @@ Phone: ${phone}
 Project Details:
 Website About: ${about}
 Requirements: ${requirements}
-Budget: ${budget}
 
 Submitted via RairBreed Studios Website
             `.trim();
@@ -1396,11 +1397,33 @@ Submitted via RairBreed Studios Website
             });
         }
 
+        // Toggle dropdown functionality for "Who We Help" section
+        function initDropdowns() {
+            const audienceItems = document.querySelectorAll('.audience-item');
+            
+            audienceItems.forEach(item => {
+                const header = item.querySelector('.audience-header');
+                
+                header.addEventListener('click', () => {
+                    // Close all other items
+                    audienceItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
         // Initialize animations
         document.addEventListener('DOMContentLoaded', function() {
             createBgElements();
             createParticles();
             handleScrollAnimation();
+            initDropdowns();
             
             // Add scroll event listener for animations
             window.addEventListener('scroll', handleScrollAnimation);
