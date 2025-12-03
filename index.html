@@ -993,6 +993,74 @@
                 transform: translateY(-100px) translateX(100px);
             }
         }
+
+        /* ===========================
+   PRICING SECTION
+=========================== */
+
+.pricing {
+    background-color: var(--dark-grey);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 15, 0.95));
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,255,255,0.2);
+}
+
+.price-card.popular {
+    background: linear-gradient(180deg, #4b2c6f, #2a1a45);
+    border: 2px solid var(--blue-accent);
+    transform: scale(1.05);
+}
+
+.price-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price-amount {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 15px 0 25px;
+    color: var(--blue-accent);
+}
+
+.price-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.price-card ul li {
+    margin-bottom: 12px;
+    color: var(--light-grey);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.price-card ul li i {
+    color: var(--red-accent);
+}
+
     </style>
 </head>
 <body>
@@ -1013,7 +1081,8 @@
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#who-we-help">Who We Help</a></li>
+                    <li><a href="#who-we-help">Our Clients</a></li>
+                    <li><a href="#pricing">Our Pricing</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
@@ -1028,7 +1097,7 @@
         <nav class="mobile-nav">
             <ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#who-we-help">Who We Help</a></li>
+                <li><a href="#who-we-help">Our Clients</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
             
@@ -1089,11 +1158,81 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-title">
+            <h2>WEBSITE PACKAGES</h2>
+        </div>
+
+        <div class="pricing-grid">
+
+            <!-- Landing Page -->
+            <div class="price-card fade-in">
+                <h3 class="price-title">Landing Page Website</h3>
+                <p>From</p>
+                <div class="price-amount">R2500</div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> 1 Standalone web page</li>
+                    <li><i class="fas fa-check"></i> For advertising</li>
+                    <li><i class="fas fa-check"></i> 1 Year Domain (.co.za)</li>
+                    <li><i class="fas fa-check"></i> 1 Year Hosting</li>
+                    <li><i class="fas fa-check"></i> Contact form OR WhatsApp Intergration</li>
+                    <li><i class="fas fa-check"></i> 3 images</li>
+                    <li><i class="fas fa-check"></i> Social media links</li>
+                </ul>
+
+                <a href="#contact" class="btn">REQUEST QUOTE</a>
+            </div>
+
+            <!-- Basic Website -->
+            <div class="price-card popular fade-in">
+                <h3 class="price-title">Basic Website (Popular)</h3>
+                <p>From</p>
+                <div class="price-amount">R3800</div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Landing Page +</li>
+                    <li><i class="fas fa-check"></i> Ideal for startups, NPOs, NGOs, Entrepreneurs and small Business.</li>
+                    <li><i class="fas fa-check"></i> 3 Branded SEO pages</li>
+                    <li><i class="fas fa-check"></i> Contact form OR WhatsApp Intergration</li>
+                    <li><i class="fas fa-check"></i> 10 images</li>
+                    <li><i class="fas fa-check"></i> Social media links</li>
+                </ul>
+
+                <a href="#contact" class="btn">REQUEST QUOTE</a>
+            </div>
+
+            <!-- Business Website -->
+            <div class="price-card fade-in">
+                <h3 class="price-title">Business Website(E-Commerce)</h3>
+                <p>From</p>
+                <div class="price-amount">R6500</div>
+
+                <ul>
+                    <li><i class="fas fa-check"></i> Basic features +</li>
+                    <li><i class="fas fa-check"></i> Ideal for larger websites</li>
+                    <li><i class="fas fa-check"></i> 5+ Branded SEO pages</li>
+                    <li><i class="fas fa-check"></i> Contact form & WhatsApp Intergration</li>
+                    <li><i class="fas fa-check"></i> Social media links</li>
+                    <li><i class="fas fa-check"></i> 15 Premium images</li>
+                    <li><i class="fas fa-check"></i> Social media links</li>
+                </ul>
+
+                <a href="#contact" class="btn">REQUEST QUOTE</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
     <!-- Who We Help Section -->
     <section id="who-we-help" class="who-we-help">
         <div class="container">
             <div class="section-title">
-                <h2>WHO WE HELP</h2>
+                <h2>Our Clients</h2>
             </div>
             <div class="audience-grid">
                 <div class="audience-item fade-in">
@@ -1204,7 +1343,19 @@
                             <label for="requirements">What do you want the website to do?</label>
                             <textarea id="requirements" name="requirements" class="form-control" placeholder="List the features and functionality you need..." required></textarea>
                         </div>
-                       <button type="submit" class="submit-btn">SEND PROJECT DETAILS VIA EMAIL</button>
+
+                        <div class="form-group">
+    <label for="package">Select Website Package</label>
+    <select id="package" name="package" class="form-control" required>
+        <option value="">-- Select a Package --</option>
+        <option value="Landing Page - R2500">Landing Page Website – from R2500</option>
+        <option value="Basic Website - R3800">Basic Website – from R3800</option>
+        <option value="Business Website - R6500">Business Website(E-Commerce) – from R6500</option>
+        <option value="Not Sure Yet">Not Sure Yet</option>
+    </select>
+</div>
+
+                       <button type="submit" class="submit-btn">Get QUOTE</button>
                     </form>
                 </div>
             </div>
@@ -1222,7 +1373,8 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <a href="#services">Services</a>
-                    <a href="#who-we-help">Who We Help</a>
+                    <a href="#who-we-help">Our Clients</a>
+                    <a href="#pricing">Our Pricing</a>
                     <a href="#contact">Contact Us</a>
                 </div>
                 <div class="footer-column">
