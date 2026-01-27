@@ -676,6 +676,13 @@
             background-color: var(--dark-grey);
         }
         
+        .social-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
         .social-service-card {
             display: flex;
             flex-direction: column;
@@ -1140,183 +1147,6 @@
             color: var(--red-accent);
             padding-left: 5px;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none;
-            }
-            
-            .mobile-nav-toggle {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero .subtitle {
-                font-size: 20px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title h2 {
-                font-size: 30px;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .logo-img {
-                height: 60px;
-            }
-            
-            .hero {
-                padding: 120px 0;
-            }
-            
-            .service-card, .audience-item {
-                margin: 0 10px;
-            }
-            
-            .contact-form {
-                padding: 25px;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-btns .btn {
-                width: 100%;
-                max-width: 300px;
-                margin-bottom: 10px;
-            }
-            
-            .sitemap-list {
-                column-count: 1;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                padding: 100px 0;
-            }
-            
-            .hero h1 {
-                font-size: 30px;
-            }
-            
-            .services-grid,
-            .audience-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-social-links {
-                justify-content: center;
-            }
-            
-            .logo-img {
-                height: 50px;
-            }
-            
-            .mobile-nav {
-                width: 90%;
-                padding: 80px 20px 25px;
-            }
-            
-            .mobile-social-links {
-                gap: 15px;
-            }
-            
-            .mobile-social-link {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .container {
-                width: 95%;
-                padding: 0 15px;
-            }
-            
-            .btn {
-                padding: 12px 28px;
-                font-size: 14px;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 26px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .section-title h2 {
-                font-size: 26px;
-            }
-            
-            .service-card, .audience-item {
-                margin: 0 5px;
-            }
-        }
-
-        /* Mobile Logo Size Fix */
-        @media (max-width: 768px) {
-            .logo-img {
-                height: 60px !important;
-            }
-        }
-
-        /* Scroll Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Particle Animation */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: var(--blue-accent);
-            border-radius: 50%;
-            animation: particle-float 20s infinite linear;
-            opacity: 0.5;
-        }
-
-        @keyframes particle-float {
-            0% {
-                transform: translateY(100vh) translateX(0);
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px);
-            }
-        }
 
         /* ===========================
    PRICING SECTION
@@ -1406,14 +1236,295 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-/* Social Media Services */
-.social-services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
 
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particle Animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--blue-accent);
+            border-radius: 50%;
+            animation: particle-float 20s infinite linear;
+            opacity: 0.5;
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+
+        /* MOBILE FIXES - ADD THIS CRITICAL SECTION */
+        @media (max-width: 768px) {
+            /* Fix for mobile content display */
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            
+            .services-grid,
+            .social-services-grid,
+            .why-grid,
+            .pricing-grid,
+            .audience-grid,
+            .value-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            .service-card,
+            .social-service-card,
+            .why-card,
+            .price-card,
+            .value-card,
+            .audience-item {
+                margin: 10px 0 !important;
+                opacity: 1 !important;
+                transform: none !important;
+                display: block !important;
+            }
+            
+            /* Fix card heights */
+            .service-card,
+            .social-service-card,
+            .why-card,
+            .price-card {
+                height: auto !important;
+                min-height: auto !important;
+            }
+            
+            .service-card h3,
+            .price-title {
+                min-height: auto !important;
+                height: auto !important;
+            }
+            
+            /* Show all content */
+            .service-card p,
+            .social-service-card p,
+            .why-card p,
+            .price-card ul,
+            .audience-content p,
+            .value-card p {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                font-size: 16px !important;
+            }
+            
+            /* Mobile navigation */
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            /* Hero section */
+            .hero {
+                padding: 100px 20px !important;
+            }
+            
+            .hero h1 {
+                font-size: 32px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .hero .subtitle {
+                font-size: 18px !important;
+            }
+            
+            .hero p {
+                font-size: 16px !important;
+                padding: 0 10px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            /* Section titles */
+            .section-title h2 {
+                font-size: 28px !important;
+            }
+            
+            .section-subtitle {
+                font-size: 16px !important;
+                padding: 0 10px;
+            }
+            
+            /* Sections */
+            section {
+                padding: 50px 0 !important;
+            }
+            
+            /* Logo */
+            .logo-img {
+                height: 50px !important;
+            }
+            
+            /* Price card adjustments */
+            .price-card.popular {
+                transform: scale(1) !important;
+            }
+            
+            .price-amount {
+                font-size: 36px !important;
+            }
+            
+            /* Contact form */
+            .contact-form {
+                padding: 20px !important;
+            }
+            
+            .contact-container {
+                gap: 30px !important;
+            }
+            
+            /* Footer */
+            .footer-content {
+                gap: 20px !important;
+            }
+            
+            .footer-column {
+                margin-bottom: 20px;
+            }
+            
+            /* Process timeline */
+            .process-step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .step-number {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 15px !important;
+            }
+            
+            .hero h1 {
+                font-size: 28px !important;
+            }
+            
+            .container {
+                width: 95% !important;
+                padding: 0 15px !important;
+            }
+            
+            .service-card,
+            .social-service-card,
+            .why-card,
+            .price-card {
+                padding: 25px 20px !important;
+            }
+            
+            .btn {
+                padding: 12px 24px !important;
+                font-size: 15px !important;
+            }
+            
+            .mobile-nav {
+                width: 85% !important;
+                padding: 80px 20px 20px !important;
+            }
+            
+            .mobile-social-link {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 18px !important;
+            }
+            
+            .price-amount {
+                font-size: 32px !important;
+            }
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 2px;
+        }
+        
+        /* Mobile responsiveness for WhatsApp */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+
+        /* Mobile Logo Size Fix */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 60px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1482,8 +1593,8 @@
         <div class="container">
             <h1>Websites Designed to Attract Leads & Encourage Customer Enquiries</h1>
             <p class="subtitle">Professional Web Design in Cape Town | Starting from R2500</p>
-            <p>Your website shouldn’t just look good — it should support your business goals.
-We design clear, user-focused websites that help build trust, attract interest, and guide visitors toward taking action..</p>
+            <p>Your website shouldn't just look good — it should support your business goals.
+We design clear, user-focused websites that help build trust, attract interest, and guide visitors toward taking action.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn">GET YOUR FREE QUOTE</a>
                 <a href="#services" class="btn btn-secondary">SEE OUR SERVICES</a>
@@ -1594,8 +1705,6 @@ We design clear, user-focused websites that help build trust, attract interest, 
                     <h3>Instagram Posts</h3>
                     <p>Visually appealing Instagram content that tells your brand story and connects with your audience. Designed to increase followers and engagement.</p>
                 </div>
-                
-                
             </div>
         </div>
     </section>
@@ -1606,7 +1715,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
             <div class="section-title">
                 <h2>Why Choose RairBreed Studios</h2>
             </div>
-            <p class="section-subtitle">We're Not just developers—we’re here to help your business grow online.Helping South African businesses thrive with smart, practical websites..</p>
+            <p class="section-subtitle">We're Not just developers—we're here to help your business grow online.Helping South African businesses thrive with smart, practical websites.</p>
             
             <div class="why-grid">
                 <div class="why-card fade-in">
@@ -1617,7 +1726,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                 <div class="why-card fade-in">
                     <div class="why-number">2</div>
                     <h3>Local Understanding</h3>
-                    <p>Based in Cape Town, we design websites that match South African business needs and customer habits.Rooted in Cape Town, we understand how to create websites that work for South African businesses..</p>
+                    <p>Based in Cape Town, we design websites that match South African business needs and customer habits.Rooted in Cape Town, we understand how to create websites that work for South African businesses.</p>
                 </div>
                 <div class="why-card fade-in">
                     <div class="why-number">3</div>
@@ -1814,7 +1923,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h4>Launch & Support</h4>
-                        <p>Your website goes live. We provide support for 1-3 months  to ensure everything runs smoothly.</p>
+                        <p>Your website goes live. We provide support for 1-3 months to ensure everything runs smoothly.</p>
                     </div>
                 </div>
             </div>
@@ -1838,7 +1947,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                         <p><i class="fas fa-check-circle"></i> <strong>Direct Communication:</strong> Work directly with the developer, no account managers</p>
                         <p><i class="fas fa-check-circle"></i> <strong>Fast Response Times:</strong> Typically respond within 2 hours during business hours</p>
                         <p><i class="fas fa-check-circle"></i> <strong>No Lock-in Contracts:</strong> Month-to-month updates available</p>
-                        <p><i class="fas fa-check-circle"></i> <strong>Local Understanding:</strong>  We understand the South African market</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>Local Understanding:</strong> We understand the South African market</p>
                     </div>
                     
                     <div class="contact-details">
@@ -1907,7 +2016,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>RairBreed Studios</h3>
-                    <p>Professional web design and development in Cape Town, South Africa. We create websites that support business goals and improve online presence..</p>
+                    <p>Professional web design and development in Cape Town, South Africa. We create websites that support business goals and improve online presence.</p>
                     <p><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</p>
                 </div>
                 <div class="footer-column">
@@ -1917,7 +2026,6 @@ We design clear, user-focused websites that help build trust, attract interest, 
                     <a href="#who-we-help">Businesses We Help</a>
                     <a href="#pricing">Website Pricing</a>
                     <a href="#contact">Free Quote</a>
-                
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
@@ -1936,21 +2044,14 @@ We design clear, user-focused websites that help build trust, attract interest, 
             </div>
             <div class="copyright">
                 <p>&copy; 2025 RairBreed Studios. All rights reserved. | Professional web design services in Cape Town, South Africa</p>
-                
             </div>
         </div>
     </footer>
 
-    <!-- Sitemap Modal -->
-    <div id="sitemapModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>RairBreed Studios Sitemap</h2>
-            <div class="sitemap-list" id="sitemapList">
-                <!-- Dynamically generated by JavaScript -->
-            </div>
-        </div>
-    </div>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+27614805731" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Enhanced sendEmail function
@@ -2113,10 +2214,20 @@ We'll contact you within 24 hours.
             }
         }
 
-        // Scroll animation
+        // Scroll animation - FIXED FOR MOBILE
         function handleScrollAnimation() {
             const elements = document.querySelectorAll('.fade-in');
+            const isMobile = window.innerWidth <= 768;
             
+            // On mobile, show all elements immediately
+            if (isMobile) {
+                elements.forEach(element => {
+                    element.classList.add('visible');
+                });
+                return;
+            }
+            
+            // On desktop, use scroll animation
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
@@ -2148,86 +2259,12 @@ We'll contact you within 24 hours.
             });
         }
 
-        // Sitemap functionality
-        function initSitemap() {
-            const sitemapLink = document.getElementById('sitemapLink');
-            const sitemapModal = document.getElementById('sitemapModal');
-            const closeModal = document.querySelector('.close-modal');
-            const sitemapList = document.getElementById('sitemapList');
-            
-            // Define sitemap pages
-            const pages = [
-                {name: 'Home', url: '#'},
-                {name: 'Services - Web Design', url: '#services'},
-                {name: 'Services - Website Development', url: '#services'},
-                {name: 'Services - Landing Pages', url: '#services'},
-                {name: 'Social Media Content Creation', url: '#social-media'},
-                {name: 'Facebook Posts Design', url: '#social-media'},
-                {name: 'Instagram Posts Design', url: '#social-media'},
-                {name: 'Businesses We Help', url: '#who-we-help'},
-                {name: 'Startups & New Businesses', url: '#who-we-help'},
-                {name: 'Local Service Businesses', url: '#who-we-help'},
-                {name: 'Online Stores & E-commerce', url: '#who-we-help'},
-                {name: 'Professionals & Consultants', url: '#who-we-help'},
-                {name: 'Restaurants & Food Businesses', url: '#who-we-help'},
-                {name: 'Health & Wellness Practitioners', url: '#who-we-help'},
-                {name: 'Website Pricing - Landing Page (R2500)', url: '#pricing'},
-                {name: 'Website Pricing - Basic Website (R3800)', url: '#pricing'},
-                {name: 'Website Pricing - Business Website (R6500)', url: '#pricing'},
-                {name: 'Why Choose RairBreed Studios', url: '.why-choose'},
-                {name: 'Our Process - How It Works', url: '.why-choose'},
-                {name: 'Contact Us - Get Free Quote', url: '#contact'},
-                {name: 'Privacy Policy', url: '#'},
-                {name: 'Terms of Service', url: '#'}
-            ];
-            
-            // Generate sitemap links
-            pages.forEach(page => {
-                const link = document.createElement('a');
-                link.href = page.url;
-                link.textContent = page.name;
-                link.addEventListener('click', (e) => {
-                    if (page.url.startsWith('#')) {
-                        e.preventDefault();
-                        sitemapModal.style.display = 'none';
-                        const targetElement = document.querySelector(page.url);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-                sitemapList.appendChild(link);
-            });
-            
-            // Open modal
-            sitemapLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                sitemapModal.style.display = 'block';
-            });
-            
-            // Close modal
-            closeModal.addEventListener('click', () => {
-                sitemapModal.style.display = 'none';
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', (e) => {
-                if (e.target === sitemapModal) {
-                    sitemapModal.style.display = 'none';
-                }
-            });
-        }
-
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
             createBgElements();
             createParticles();
             handleScrollAnimation();
             initDropdowns();
-            initSitemap();
             
             // Add scroll event listener for animations
             window.addEventListener('scroll', handleScrollAnimation);
@@ -2240,55 +2277,5 @@ We'll contact you within 24 hours.
             console.log('%cWebsite optimized for SEO and conversions', 'color: #ff1493;');
         });
     </script>
-        <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/+27614805731" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Add this to your existing CSS -->
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
-        }
-        
-        .whatsapp-float i {
-            margin-top: 2px;
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 25px;
-            }
-        }
-    </style>
-</body>
-</html>
 </body>
 </html>
