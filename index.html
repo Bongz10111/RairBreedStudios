@@ -3,7 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RairBreed Studios | Futuristic Web Design Solutions</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>RairBreed Studios | Websites That Generate Leads & Customers</title>
+    <meta name="description" content="Professional website design in Cape Town. Get lead-generating websites that convert visitors into paying customers. Affordable packages from R2500. Free consultation.">
+    <meta name="keywords" content="website design Cape Town, web development South Africa, landing pages, business websites, SEO optimization, affordable websites, lead generation, small business websites">
+    <meta name="author" content="RairBreed Studios">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rairbreedstudios.co.za/">
+    <meta property="og:title" content="RairBreed Studios | Websites That Generate Business">
+    <meta property="og:description" content="Professional web design that converts visitors into paying customers. Get your free quote today.">
+    <meta property="og:image" content="https://rairbreedstudios.co.za/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rairbreedstudios.co.za/">
+    <meta property="twitter:title" content="RairBreed Studios | Websites That Generate Business">
+    <meta property="twitter:description" content="Professional web design that converts visitors into paying customers. Get your free quote today.">
+    <meta property="twitter:image" content="https://rairbreedstudios.co.za/images/og-image.jpg">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rairbreedstudios.co.za">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "RairBreed Studios",
+      "image": "https://rairbreedstudios.co.za/images/Rairlogo.png",
+      "description": "Professional web design and development services in Cape Town, South Africa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cape Town",
+        "addressRegion": "WC",
+        "addressCountry": "ZA"
+      },
+      "telephone": "+27614805731",
+      "email": "bonganemata@gmail.com",
+      "priceRange": "R2500-R6500",
+      "url": "https://rairbreedstudios.co.za",
+      "openingHours": "Mo-Fr 09:00-17:00",
+      "sameAs": []
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -23,6 +73,7 @@
             --blue-accent: #00ffff;
             --form-bg: #0f111a;
             --neon-shadow: 0 0 5px var(--blue-accent), 0 0 10px var(--blue-accent), 0 0 15px var(--blue-accent);
+            --success-green: #2ecc71;
         }
         
         * {
@@ -63,6 +114,7 @@
         
         p {
             margin-bottom: 15px;
+            font-size: 18px;
         }
         
         .btn {
@@ -73,7 +125,6 @@
             border: none;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -82,6 +133,8 @@
             z-index: 1;
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 16px;
         }
         
         .btn::before {
@@ -103,6 +156,16 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--blue-accent);
+            color: var(--blue-accent);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 255, 255, 0.1);
         }
         
         /* Animated Background Elements */
@@ -135,7 +198,7 @@
         
         /* Header Styles */
         header {
-            background-color: rgba(10, 10, 15, 0.9);
+            background-color: rgba(10, 10, 15, 0.95);
             color: var(--off-white);
             padding: 20px 0;
             position: sticky;
@@ -258,7 +321,7 @@
             width: 85%;
             max-width: 320px;
             height: 100vh;
-            background-color: rgba(26, 26, 46, 0.95);
+            background-color: rgba(26, 26, 46, 0.98);
             padding: 90px 25px 30px;
             transition: right 0.4s ease;
             z-index: 999;
@@ -383,7 +446,7 @@
             visibility: visible;
         }
         
-        /* Hero Section */
+        /* Hero Section - UPDATED FOR BETTER MESSAGING */
         .hero {
             background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -416,11 +479,12 @@
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
             color: var(--off-white);
             text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
             animation: glow 2s infinite alternate;
+            line-height: 1.2;
         }
         
         @keyframes glow {
@@ -432,17 +496,67 @@
             }
         }
         
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--blue-accent);
+            font-weight: 500;
+        }
+        
         .hero p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 30px;
         }
         
-        .hero .btn {
-            margin-top: 20px;
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
         
-        /* Services Section */
+        /* Value Proposition Section - NEW */
+        .value-props {
+            background-color: var(--dark-grey);
+            padding: 60px 0;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(26, 26, 46, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 255, 255, 0.1);
+            border-color: var(--blue-accent);
+        }
+        
+        .value-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--blue-accent);
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        /* Services Section - UPDATED FOR BUSINESS BENEFITS */
         .services {
             background-color: var(--black);
             position: relative;
@@ -470,15 +584,23 @@
             background: linear-gradient(90deg, var(--red-accent), var(--blue-accent));
         }
         
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            color: var(--light-grey);
+        }
+        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         
         .service-card {
             background: linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(10, 10, 15, 0.9));
-            padding: 30px;
+            padding: 35px 30px;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.4s ease;
@@ -486,6 +608,7 @@
             overflow: hidden;
             border: 1px solid rgba(0, 255, 255, 0.1);
             z-index: 1;
+            height: 100%;
         }
         
         .service-card::before {
@@ -525,17 +648,60 @@
         .service-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
+            min-height: 60px;
         }
-
+        
+        .service-benefits {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-benefits li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .service-benefits li i {
+            color: var(--success-green);
+            margin-top: 3px;
+        }
+        
+        /* Social Media Services - NEW */
+        .social-services {
+            background-color: var(--dark-grey);
+        }
+        
+        .social-service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background: rgba(26, 26, 46, 0.6);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .social-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--red-accent);
+        }
+        
         /* Who We Help Section */
         .who-we-help {
-            background-color: var(--dark-grey);
+            background-color: var(--black);
             position: relative;
         }
         
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         
@@ -559,7 +725,7 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            background: linear-gradient(45deg, #4a4a4a, #2d2d2d);
+            background: linear-gradient(45deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 255, 0.2));
             color: white;
         }
         
@@ -593,6 +759,45 @@
         .audience-content p {
             margin-bottom: 0;
             color: var(--light-grey);
+        }
+        
+        /* Why Choose Us Section - NEW */
+        .why-choose {
+            background-color: var(--dark-grey);
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .why-card {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--blue-accent);
+            transition: all 0.3s ease;
+        }
+        
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
+        }
+        
+        .why-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--red-accent), var(--blue-accent));
+            color: var(--black);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
         }
         
         /* Contact Section */
@@ -778,6 +983,39 @@
             border-left: 3px solid var(--red-accent);
         }
         
+        /* Process Timeline - NEW */
+        .process-timeline {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--red-accent), var(--blue-accent));
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: 'Orbitron', sans-serif;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 10px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--black);
@@ -836,6 +1074,71 @@
             font-size: 14px;
         }
         
+        .sitemap-link {
+            margin-top: 10px;
+            display: inline-block;
+            color: var(--blue-accent);
+        }
+        
+        /* Modal for Sitemap */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1002;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.95), rgba(10, 10, 15, 0.98));
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--blue-accent);
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            color: var(--light-grey);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--red-accent);
+        }
+        
+        .sitemap-list {
+            column-count: 2;
+            column-gap: 40px;
+        }
+        
+        .sitemap-list a {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--blue-accent);
+            text-decoration: none;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        
+        .sitemap-list a:hover {
+            color: var(--red-accent);
+            padding-left: 5px;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
             .desktop-nav {
@@ -848,6 +1151,10 @@
             
             .hero h1 {
                 font-size: 36px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
             }
             
             .hero p {
@@ -876,6 +1183,21 @@
             
             .contact-form {
                 padding: 25px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+            
+            .sitemap-list {
+                column-count: 1;
             }
         }
         
@@ -1017,6 +1339,9 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     position: relative;
     transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .price-card:hover {
@@ -1025,15 +1350,16 @@
 }
 
 .price-card.popular {
-    background: linear-gradient(180deg, #4b2c6f, #2a1a45);
+    background: linear-gradient(180deg, rgba(75, 44, 111, 0.9), rgba(42, 26, 69, 0.95));
     border: 2px solid var(--blue-accent);
     transform: scale(1.05);
 }
 
 .price-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 10px;
+    min-height: 60px;
 }
 
 .price-amount {
@@ -1046,19 +1372,44 @@
 .price-card ul {
     list-style: none;
     margin-bottom: 30px;
+    flex-grow: 1;
 }
 
 .price-card ul li {
     margin-bottom: 12px;
     color: var(--light-grey);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
-    justify-content: center;
+    text-align: left;
+    padding-left: 10px;
 }
 
 .price-card ul li i {
     color: var(--red-accent);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.price-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: linear-gradient(45deg, var(--red-accent), var(--blue-accent));
+    color: var(--black);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Social Media Services */
+.social-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
     </style>
@@ -1074,16 +1425,17 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="images/Rairlogo.png" alt="RairBreed Studios" class="logo-img">
+                <img src="images/Rairlogo.png" alt="RairBreed Studios - Professional Web Design Cape Town" class="logo-img">
             </a>
             
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#social-media">Social Media</a></li>
                     <li><a href="#who-we-help">Our Clients</a></li>
-                    <li><a href="#pricing">Our Pricing</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             
@@ -1096,8 +1448,9 @@
        <nav class="mobile-nav">
     <ul>
         <li><a href="#services">Services</a></li>
+        <li><a href="#social-media">Social Media</a></li>
         <li><a href="#who-we-help">Our Clients</a></li>
-        <li><a href="#pricing">Our Pricing</a></li>   
+        <li><a href="#pricing">Pricing</a></li>   
         <li><a href="#contact">Contact Us</a></li>
     </ul>
 
@@ -1117,198 +1470,381 @@
         </a>
     </div>
 </nav>
-
         
         <!-- Overlay for mobile menu -->
         <div class="overlay"></div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - UPDATED -->
     <section class="hero">
         <div class="container">
-            <h1>PROFESSIONAL WEB DESIGNS FOR YOUR BUSINESS</h1>
-            <p>We build clean, modern websites that look great on any device and help your business get noticed online..</p>
-            <p>Whether you need a new landing page, regular updates, or help getting online — we'll make sure your digital presence works for you. - Let us elevate your digital footprint!</p>
-            <a href="#contact" class="btn">GET YOUR FREE QUOTE</a>
+            <h1>Websites Designed to Attract Leads & Encourage Customer Enquiries</h1>
+            <p class="subtitle">Professional Web Design in Cape Town | Starting from R2500</p>
+            <p>Your website shouldn’t just look good — it should support your business goals.
+We design clear, user-focused websites that help build trust, attract interest, and guide visitors toward taking action..</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">GET YOUR FREE QUOTE</a>
+                <a href="#services" class="btn btn-secondary">SEE OUR SERVICES</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Value Proposition Section - NEW -->
+    <section class="value-props">
+        <div class="container">
+            <div class="section-title">
+                <h2>What a Great Website Can Do For Your Business</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Generate More Leads</h3>
+                    <p>Convert website visitors into qualified leads with strategic design and clear calls-to-action.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Increase Sales</h3>
+                    <p>Turn lookers into buyers with optimized user journeys and persuasive content.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"><i class="fas fa-user-clock"></i></div>
+                    <h3>Save Time & Automate</h3>
+                    <p>Reduce repetitive tasks with booking systems, contact forms, and automated responses.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon"><i class="fas fa-search"></i></div>
+                    <h3>Get Found on Google</h3>
+                    <p>Rank higher in search results with SEO-optimized websites that attract local customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - UPDATED -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
-                <h2>OUR SERVICES</h2>
+                <h2>Our Services</h2>
             </div>
+            <p class="section-subtitle">We design practical digital tools that can help businesses improve their online presence and operations.</p>
+            
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Website Design</h3>
-                    <p>Modern, responsive website designs tailored to your brand — built to look great on any device and leave a lasting impression..</p>
+                    <h3>Website Design That Can Convert</h3>
+                    <p>Modern, responsive websites designed to turn visitors into customers. We focus on user experience, clear messaging, and strategic calls-to-action that deliver results.</p>
+                    <div class="service-benefits">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Structured to encourage more visitor enquiries</li>
+                            <li><i class="fas fa-check"></i> Build customer trust with professional design</li>
+                            <li><i class="fas fa-check"></i> Works perfectly on all devices</li>
+                            <li><i class="fas fa-check"></i> Faster load times = better Google ranking</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Interactive Development</h3>
-                    <p>Clean, reliable code with smooth animations and simple interactive features that make your website engaging and easy to use..</p>
+                    <h3>Website Development & Updates</h3>
+                    <p>Keep your website current and competitive. From simple content updates to new features, we ensure your site grows with your business.</p>
+                    <div class="service-benefits">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Regular content updates to stay relevant</li>
+                            <li><i class="fas fa-check"></i> Add new features as your business grows</li>
+                            <li><i class="fas fa-check"></i> Fix issues quickly to avoid losing customers</li>
+                            <li><i class="fas fa-check"></i> Security updates to protect your business</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
-                    <h3>Website Updates & Maintenance</h3>
-                    <p>Keep your website fresh and running smoothly with regular updates, new content, and design improvements as your business grows.</p>
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Landing Pages That Can Convert</h3>
+                    <p>Single-page websites designed for specific marketing campaigns. Perfect for promotions, product launches, or service offerings.</p>
+                    <div class="service-benefits">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Designed to turn enquiries into potential clients</li>
+                            <li><i class="fas fa-check"></i> Perfect for Facebook/Instagram ad campaigns</li>
+                            <li><i class="fas fa-check"></i> Start a Conversation</li>
+                            <li><i class="fas fa-check"></i> View Products / Chat on WhatsApp</li>
+                            <li><i class="fas fa-check"></i> Built to help more visitors take the next step</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Social Media Services - NEW -->
+    <section id="social-media" class="social-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Social Media Content Creation</h2>
+            </div>
+            <p class="section-subtitle">Stand out on social media with professionally designed posts that engage your audience and promote your brand.</p>
+            
+            <div class="social-services-grid">
+                <div class="social-service-card fade-in">
+                    <div class="social-icon"><i class="fab fa-facebook-square"></i></div>
+                    <h3>Facebook Posts</h3>
+                    <p>Eye-catching posts designed to increase engagement, shares, and drive traffic to your website. Perfect for promotions, announcements, and community building.</p>
+                </div>
+                <div class="social-service-card fade-in">
+                    <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                    <h3>Instagram Posts</h3>
+                    <p>Visually appealing Instagram content that tells your brand story and connects with your audience. Designed to increase followers and engagement.</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section - NEW -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose RairBreed Studios</h2>
+            </div>
+            <p class="section-subtitle">We're Not just developers—we’re here to help your business grow online.Helping South African businesses thrive with smart, practical websites..</p>
+            
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <div class="why-number">1</div>
+                    <h3>Business-First Approach</h3>
+                    <p>We start by understanding your business goals, then build a website that helps achieve them. Every design decision is made with your request.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">2</div>
+                    <h3>Local Understanding</h3>
+                    <p>Based in Cape Town, we design websites that match South African business needs and customer habits.Rooted in Cape Town, we understand how to create websites that work for South African businesses..</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">3</div>
+                    <h3>No Technical Jargon</h3>
+                    <p>We explain everything in plain English. You'll always know what you're getting, why it matters, and how it helps your business.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <div class="why-number">4</div>
+                    <h3>Ongoing Support</h3>
+                    <p>We're here after your website launches. Whether you need updates, fixes, or advice, we're just a WhatsApp message away.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section - UPDATED -->
 <section class="pricing" id="pricing">
     <div class="container">
         <div class="section-title">
-            <h2>WEBSITE PACKAGES</h2>
+            <h2>Website Packages</h2>
         </div>
+        <p class="section-subtitle">Transparent pricing with no hidden costs. All packages include responsive design, basic SEO setup, and 1 month of free support.</p>
 
         <div class="pricing-grid">
 
             <!-- Landing Page -->
             <div class="price-card fade-in">
                 <h3 class="price-title">Landing Page Website</h3>
-                <p>From</p>
+                <p>Perfect for promotions or specific offers</p>
                 <div class="price-amount">R2500</div>
 
                 <ul>
-                    <li><i class="fas fa-check"></i> 1 Standalone web page</li>
-                    <li><i class="fas fa-check"></i> For advertising</li>
-                    <li><i class="fas fa-check"></i> 1 Year Domain (.co.za)</li>
-                    <li><i class="fas fa-check"></i> 1 Year Hosting</li>
-                    <li><i class="fas fa-check"></i> Contact form OR WhatsApp Intergration</li>
-                    <li><i class="fas fa-check"></i> 3 images</li>
+                    <li><i class="fas fa-check"></i> 1 high-converting landing page</li>
+                    <li><i class="fas fa-check"></i> Mobile-optimized design</li>
+                    <li><i class="fas fa-check"></i> Contact form OR WhatsApp integration</li>
+                    <li><i class="fas fa-check"></i> Basic SEO setup</li>
+                    <li><i class="fas fa-check"></i> 3 premium stock images</li>
                     <li><i class="fas fa-check"></i> Social media links</li>
+                    <li><i class="fas fa-check"></i> 1 month free support</li>
+                    <li><i class="fas fa-check"></i> Excluding domain name and hosting Platform</li>
                 </ul>
 
-                <a href="#contact" class="btn">REQUEST QUOTE</a>
+                <a href="#contact" class="btn">GET THIS PACKAGE</a>
             </div>
 
             <!-- Basic Website -->
             <div class="price-card popular fade-in">
-                <h3 class="price-title">Basic Website (Popular)</h3>
-                <p>From</p>
+                <div class="price-badge">MOST POPULAR</div>
+                <h3 class="price-title">Basic Business Website</h3>
+                <p>Ideal for startups and small businesses</p>
                 <div class="price-amount">R3800</div>
 
                 <ul>
-                    <li><i class="fas fa-check"></i> Landing Page +</li>
-                    <li><i class="fas fa-check"></i> Ideal for startups, NPOs, NGOs, Entrepreneurs and small Business.</li>
-                    <li><i class="fas fa-check"></i> 3 Branded SEO pages</li>
-                    <li><i class="fas fa-check"></i> Contact form OR WhatsApp Intergration</li>
-                    <li><i class="fas fa-check"></i> 10 images</li>
-                    <li><i class="fas fa-check"></i> Social media links</li>
+                    <li><i class="fas fa-check"></i> 3-5 page professional website</li>
+                    <li><i class="fas fa-check"></i> Home, About, Services, Contact pages</li>
+                    <li><i class="fas fa-check"></i> Mobile-optimized design</li>
+                    <li><i class="fas fa-check"></i> Contact form + WhatsApp integration</li>
+                    <li><i class="fas fa-check"></i> Basic SEO optimization</li>
+                    <li><i class="fas fa-check"></i> 10 premium stock images</li>
+                    <li><i class="fas fa-check"></i> Excluding domain name and hosting Platform</li>
+                    <li><i class="fas fa-check"></i> 1 month free support</li>
                 </ul>
 
-                <a href="#contact" class="btn">REQUEST QUOTE</a>
+                <a href="#contact" class="btn">GET THIS PACKAGE</a>
             </div>
 
             <!-- Business Website -->
             <div class="price-card fade-in">
-                <h3 class="price-title">Business Website(E-Commerce)</h3>
-                <p>From</p>
+                <h3 class="price-title">Business Website</h3>
+                <p>For established businesses needing more</p>
                 <div class="price-amount">R6500</div>
 
                 <ul>
-                    <li><i class="fas fa-check"></i> Basic features +</li>
-                    <li><i class="fas fa-check"></i> Ideal for larger websites</li>
-                    <li><i class="fas fa-check"></i> 5+ Branded SEO pages</li>
-                    <li><i class="fas fa-check"></i> Contact form & WhatsApp Intergration</li>
-                    <li><i class="fas fa-check"></i> Social media links</li>
-                    <li><i class="fas fa-check"></i> 15 Premium images</li>
-                    <li><i class="fas fa-check"></i> Social media links</li>
+                    <li><i class="fas fa-check"></i> 5-8 page advanced website</li>
+                    <li><i class="fas fa-check"></i> Custom design with animations</li>
+                    <li><i class="fas fa-check"></i> Advanced SEO optimization</li>
+                    <li><i class="fas fa-check"></i> Contact form + WhatsApp + Email</li>
+                    <li><i class="fas fa-check"></i> Blog/news section setup</li>
+                    <li><i class="fas fa-check"></i> 15+ premium images</li>
+                    <li><i class="fas fa-check"></i> Social media integration</li>
+                    <li><i class="fas fa-check"></i> 3 months free support</li>
+                    <li><i class="fas fa-check"></i> Excluding domain name and hosting Platform</li>
                 </ul>
 
-                <a href="#contact" class="btn">REQUEST QUOTE</a>
+                <a href="#contact" class="btn">GET THIS PACKAGE</a>
             </div>
 
+        </div>
+        
+        <div class="note" style="margin-top: 40px;">
+            <p><strong>Need something custom?</strong> All prices are starting points. Contact us for a personalized quote based on your specific needs. Social media content packages start from R500/month for 5 custom posts.</p>
         </div>
     </div>
 </section>
 
-
-    <!-- Who We Help Section -->
+    <!-- Who We Help Section - UPDATED -->
     <section id="who-we-help" class="who-we-help">
         <div class="container">
             <div class="section-title">
-                <h2>Our Clients</h2>
+                <h2>Businesses We Help</h2>
             </div>
+            <p class="section-subtitle">We create websites that help South African businesses get noticed online.Helping local businesses showcase themselves and engage their customers.</p>
+            
             <div class="audience-grid">
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Startups</h3>
+                        <h3>Startups & New Businesses</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Get online fast with powerful branding that establishes your presence and helps you stand out in a competitive market. We create websites that grow with your business.</p>
+                        <p>Get online quickly with a professional website that establishes credibility and attracts your first customers. We help you compete with established businesses from day one.</p>
                     </div>
                 </div>
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Small & Local Businesses</h3>
+                        <h3>Local Service Businesses</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Grow your presence and attract customers with a professional website that showcases your products and services. We help local businesses establish a strong online footprint.</p>
+                        <p>Plumbers, electricians, Salons, Bakeries, Hospitality, cleaners, tutors—get found by local customers searching for your services.</p>
                     </div>
                 </div>
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Entrepreneurs</h3>
+                        <h3>Online Stores & E-commerce</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Turn your vision into a professional website that communicates your unique value proposition. We help entrepreneurs build credibility and attract their first customers.</p>
+                        <p>Sell products online with secure, user-friendly shopping experiences. We can build stores that can convert browsers into potential buyers and make management easy for you.</p>
                     </div>
                 </div>
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Creatives & Influencers</h3>
+                        <h3>Professionals & Consultants</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Build a unique online identity that showcases your talent and connects with your audience. We design portfolio websites that highlight your work and personality.</p>
+                        <p>Lawyers, accountants, coaches—establish expertise and attract higher-value clients with professional websites that build trust and demonstrate your value.</p>
                     </div>
                 </div>
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Online Stores</h3>
+                        <h3>Restaurants & Food Businesses</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Sell products with modern e-commerce solutions that are easy to manage and optimized for conversions. We build online stores that provide seamless shopping experiences.</p>
+                        <p>Showcase your menu, take online orders, and attract hungry customers. We design mouth-watering websites that make people want to visit or order.</p>
                     </div>
                 </div>
                 <div class="audience-item fade-in">
                     <div class="audience-header">
-                        <h3>Service Providers</h3>
+                        <h3>Health & Wellness Practitioners</h3>
                         <span class="toggle-icon">+</span>
                     </div>
                     <div class="audience-content">
-                        <p>Whether you're a salon, mechanic, tutor, fitness coach, or other service professional, we create websites that highlight your expertise and make it easy for clients to book your services.</p>
+                        <p>Yoga studios, personal trainers, therapists—attract clients and build trust with calming, professional websites. Online booking integration available.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Our Process Section - NEW -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+            <p class="section-subtitle">A simple, transparent process from initial idea to live website.</p>
+            
+            <div class="process-timeline">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Free Consultation</h4>
+                        <p>We discuss your business, goals, and requirements. You get a clear quote with no surprises.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Design & Approval</h4>
+                        <p>We create a design mockup based on your brand. You review and request changes until you're 100% happy.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Development</h4>
+                        <p>We build your website with clean code, fast loading times, and mobile optimization.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Launch & Support</h4>
+                        <p>Your website goes live. We provide support for 1-3 months  to ensure everything runs smoothly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - UPDATED -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>GET IN TOUCH</h2>
+                <h2>Let's Build Your Website</h2>
             </div>
+            <p class="section-subtitle">Ready to attract more customers? Fill out the form below and we'll contact you within 24 hours with a custom quote.</p>
+            
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Let's Build Your Future Online</h3>
-                    <p>Starting out or ready for a refresh? Fill out the form, and we'll reach out within a day to help you get your website moving in the right direction..</p>
+                    <h3>Why Work With Us?</h3>
+                    <p>We're not just another web agency. We're passionate about helping South African businesses succeed online. When you work with us, you get:</p>
+                    
+                    <div class="contact-details">
+                        <p><i class="fas fa-check-circle"></i> <strong>Direct Communication:</strong> Work directly with the developer, no account managers</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>Fast Response Times:</strong> Typically respond within 2 hours during business hours</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>No Lock-in Contracts:</strong> Month-to-month updates available</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>Local Understanding:</strong>  We understand the South African market</p>
+                    </div>
+                    
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> bonganemata@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> 0614805731</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Cape Town</p>
+                        <p><i class="fas fa-phone"></i> 0614805731 WhatsApp</p> 
+                        <p><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</p>
                     </div>
+                    
                     <div class="contact-social-links">
                         <a href="https://wa.me/+27614805731" class="contact-social-link" title="Contact us on WhatsApp">
                             <i class="fab fa-whatsapp"></i>
@@ -1318,105 +1854,144 @@
                         </a>
                     </div>
                 </div>
+                
                 <div class="contact-form fade-in">
-                    <form id="projectForm" onsubmit="sendEmail()">
+                    <form id="projectForm" onsubmit="sendEmail(); return false;">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="surname">Surname</label>
-                            <input type="text" id="surname" name="surname" class="form-control" placeholder="Your Surname" required>
+                            <label for="business">Business Name</label>
+                            <input type="text" id="business" name="business" class="form-control" placeholder="Your Business Name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Contact Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone Number" required>
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="061 480 5731" required>
                         </div>
                         <div class="form-group">
-                            <label for="about">Tell us what your website is about</label>
-                            <textarea id="about" name="about" class="form-control" placeholder="Describe your business and website goals..." required></textarea>
+                            <label for="package">What type of website do you need? *</label>
+                            <select id="package" name="package" class="form-control" required>
+                                <option value="">-- Select an option --</option>
+                                <option value="Landing Page (R2500)">Landing Page - R2500</option>
+                                <option value="Basic Website (R3800)">Basic Business Website - R3800</option>
+                                <option value="Business Website (R6500)">Business Website - R6500</option>
+                                <option value="Website Updates">Website Updates/Maintenance</option>
+                                <option value="Social Media Content">Social Media Content Creation</option>
+                                <option value="Not Sure">Not Sure - Need Advice</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="requirements">What do you want the website to do?</label>
-                            <textarea id="requirements" name="requirements" class="form-control" placeholder="List the features and functionality you need..." required></textarea>
+                            <label for="message">Tell us about your project *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="What does your business do? What should the website achieve? Any specific features needed?" rows="4" required></textarea>
                         </div>
-
-                        <div class="form-group">
-    <label for="package">Select Website Package</label>
-    <select id="package" name="package" class="form-control" required>
-        <option value="">-- Select a Package --</option>
-        <option value="Landing Page - R2500">Landing Page Website – from R2500</option>
-        <option value="Basic Website - R3800">Basic Website – from R3800</option>
-        <option value="Business Website - R6500">Business Website(E-Commerce) – from R6500</option>
-        <option value="Not Sure Yet">Not Sure Yet</option>
-    </select>
-</div>
-
-                       <button type="submit" class="submit-btn">Get QUOTE</button>
+                        <div class="note">
+                            <p><i class="fas fa-clock"></i> We typically respond within 2-4 hours during business hours (Mon-Fri, 9am-5pm).</p>
+                        </div>
+                        <button type="submit" class="submit-btn">GET MY FREE QUOTE</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - UPDATED -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>RairBreed Studios</h3>
-                    <p>Cutting-edge web design and development services for forward-thinking businesses.</p>
+                    <p>Professional web design and development in Cape Town, South Africa. We create websites that support business goals and improve online presence..</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</p>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <a href="#services">Services</a>
-                    <a href="#who-we-help">Our Clients</a>
-                    <a href="#pricing">Our Pricing</a>
-                    <a href="#contact">Contact Us</a>
+                    <a href="#services">Web Design Services</a>
+                    <a href="#social-media">Social Media Content</a>
+                    <a href="#who-we-help">Businesses We Help</a>
+                    <a href="#pricing">Website Pricing</a>
+                    <a href="#contact">Free Quote</a>
+                
                 </div>
                 <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <a href="https://wa.me/+27614805731"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="mailto:bonganemata@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <h3>Contact Info</h3>
+                    <a href="tel:+27614805731"><i class="fas fa-phone"></i> 061 480 5731</a>
+                    <a href="mailto:bonganemata@gmail.com"><i class="fas fa-envelope"></i> bonganemata@gmail.com</a>
+                    <a href="https://wa.me/+27614805731"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <a>Website Design & Development</a>
+                    <a>Landing Pages</a>
+                    <a>Website Updates & Maintenance</a>
+                    <a>Social Media Content Creation</a>
+                    <a>Basic SEO Setup</a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 RairBreed Studios. All rights reserved.</p>
+                <p>&copy; 2025 RairBreed Studios. All rights reserved. | Professional web design services in Cape Town, South Africa</p>
+                
             </div>
         </div>
     </footer>
 
+    <!-- Sitemap Modal -->
+    <div id="sitemapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>RairBreed Studios Sitemap</h2>
+            <div class="sitemap-list" id="sitemapList">
+                <!-- Dynamically generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Enhanced sendEmail function
         function sendEmail() {
             event.preventDefault();
             
             // Get form values
             const name = document.getElementById('name').value;
-            const surname = document.getElementById('surname').value;
+            const business = document.getElementById('business').value || 'Not provided';
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const about = document.getElementById('about').value;
-            const requirements = document.getElementById('requirements').value;
+            const package = document.getElementById('package').value;
+            const message = document.getElementById('message').value;
             
-            // Create email content
-            const subject = `New Project Inquiry from ${name} ${surname}`;
+            // Create email content with better formatting
+            const subject = `New Website Quote Request from ${name} - ${business}`;
             const body = `
-New Project Inquiry - RairBreed Studios
+NEW WEBSITE QUOTE REQUEST
+=========================
 
 Client Information:
-Name: ${name} ${surname}
+------------------
+Name: ${name}
+Business: ${business}
 Email: ${email}
 Phone: ${phone}
 
 Project Details:
-Website About: ${about}
-Requirements: ${requirements}
+----------------
+Package Interest: ${package}
 
-Submitted via RairBreed Studios Website
+Project Description:
+${message}
+
+Additional Info:
+----------------
+Website: rairbreedstudios.co.za
+Date: ${new Date().toLocaleDateString('en-ZA')}
+Time: ${new Date().toLocaleTimeString('en-ZA')}
+
+================================
+Thank you for your inquiry!
+We'll contact you within 24 hours.
             `.trim();
             
             // Create mailto link
@@ -1427,7 +2002,7 @@ Submitted via RairBreed Studios Website
             
             // Show success message
             setTimeout(function() {
-                alert('Thank you! Your email client should open with all your details. Just click "Send" to submit your project inquiry.');
+                alert('Thank you, ' + name + '! Your email client should open with all your details. Just click "Send" to submit your inquiry.\n\nWe\'ll contact you within 24 hours with a custom quote.');
             }, 500);
             
             return false;
@@ -1571,15 +2146,96 @@ Submitted via RairBreed Studios Website
             });
         }
 
-        // Initialize animations
+        // Sitemap functionality
+        function initSitemap() {
+            const sitemapLink = document.getElementById('sitemapLink');
+            const sitemapModal = document.getElementById('sitemapModal');
+            const closeModal = document.querySelector('.close-modal');
+            const sitemapList = document.getElementById('sitemapList');
+            
+            // Define sitemap pages
+            const pages = [
+                {name: 'Home', url: '#'},
+                {name: 'Services - Web Design', url: '#services'},
+                {name: 'Services - Website Development', url: '#services'},
+                {name: 'Services - Landing Pages', url: '#services'},
+                {name: 'Social Media Content Creation', url: '#social-media'},
+                {name: 'Facebook Posts Design', url: '#social-media'},
+                {name: 'Instagram Posts Design', url: '#social-media'},
+                {name: 'Businesses We Help', url: '#who-we-help'},
+                {name: 'Startups & New Businesses', url: '#who-we-help'},
+                {name: 'Local Service Businesses', url: '#who-we-help'},
+                {name: 'Online Stores & E-commerce', url: '#who-we-help'},
+                {name: 'Professionals & Consultants', url: '#who-we-help'},
+                {name: 'Restaurants & Food Businesses', url: '#who-we-help'},
+                {name: 'Health & Wellness Practitioners', url: '#who-we-help'},
+                {name: 'Website Pricing - Landing Page (R2500)', url: '#pricing'},
+                {name: 'Website Pricing - Basic Website (R3800)', url: '#pricing'},
+                {name: 'Website Pricing - Business Website (R6500)', url: '#pricing'},
+                {name: 'Why Choose RairBreed Studios', url: '.why-choose'},
+                {name: 'Our Process - How It Works', url: '.why-choose'},
+                {name: 'Contact Us - Get Free Quote', url: '#contact'},
+                {name: 'Privacy Policy', url: '#'},
+                {name: 'Terms of Service', url: '#'}
+            ];
+            
+            // Generate sitemap links
+            pages.forEach(page => {
+                const link = document.createElement('a');
+                link.href = page.url;
+                link.textContent = page.name;
+                link.addEventListener('click', (e) => {
+                    if (page.url.startsWith('#')) {
+                        e.preventDefault();
+                        sitemapModal.style.display = 'none';
+                        const targetElement = document.querySelector(page.url);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+                sitemapList.appendChild(link);
+            });
+            
+            // Open modal
+            sitemapLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                sitemapModal.style.display = 'block';
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                sitemapModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === sitemapModal) {
+                    sitemapModal.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
             createBgElements();
             createParticles();
             handleScrollAnimation();
             initDropdowns();
+            initSitemap();
             
             // Add scroll event listener for animations
             window.addEventListener('scroll', handleScrollAnimation);
+            
+            // Trigger initial animation check
+            setTimeout(handleScrollAnimation, 100);
+            
+            // Console welcome message
+            console.log('%cRairBreed Studios | Professional Web Design', 'color: #00ffff; font-size: 16px; font-weight: bold;');
+            console.log('%cWebsite optimized for SEO and conversions', 'color: #ff1493;');
         });
     </script>
 </body>
