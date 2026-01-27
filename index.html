@@ -529,6 +529,8 @@
             gap: 30px;
             margin-top: 40px;
         }
+
+        
         
         .value-card {
             text-align: center;
@@ -2238,5 +2240,55 @@ We'll contact you within 24 hours.
             console.log('%cWebsite optimized for SEO and conversions', 'color: #ff1493;');
         });
     </script>
+        <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+27614805731" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Add this to your existing CSS -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 2px;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</body>
+</html>
 </body>
 </html>
