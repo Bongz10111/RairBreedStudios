@@ -1025,6 +1025,48 @@
             margin-bottom: 10px;
         }
         
+        /* Client Logos Section */
+        .client-logos {
+            background-color: var(--black);
+            padding: 60px 0;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .logo-item {
+            display: block;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            filter: grayscale(30%);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding: 10px;
+            background: rgba(26, 26, 46, 0.4);
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: translateY(-5px);
+            border-color: var(--blue-accent);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .logo-item img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--black);
@@ -1433,6 +1475,14 @@
                 margin-bottom: 15px;
                 margin-right: 0;
             }
+
+            /* Client logos mobile */
+            .logos-grid {
+                gap: 20px;
+            }
+            .logo-item img {
+                max-width: 120px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1545,7 +1595,7 @@
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#social-media">Social Media</a></li>
+                    
                     <li><a href="#who-we-help">Our Clients</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1561,7 +1611,7 @@
        <nav class="mobile-nav">
     <ul>
         <li><a href="#services">Services</a></li>
-        <li><a href="#social-media">Social Media</a></li>
+        
         <li><a href="#who-we-help">Our Clients</a></li>
         <li><a href="#pricing">Pricing</a></li>   
         <li><a href="#contact">Contact Us</a></li>
@@ -1686,29 +1736,6 @@ We design clear, user-focused websites that help build trust, attract interest, 
         </div>
     </section>
 
-    <!-- Social Media Services - NEW -->
-    <section id="social-media" class="social-services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Social Media Content Creation</h2>
-            </div>
-            <p class="section-subtitle">Stand out on social media with professionally designed posts that engage your audience and promote your brand.</p>
-            
-            <div class="social-services-grid">
-                <div class="social-service-card fade-in">
-                    <div class="social-icon"><i class="fab fa-facebook-square"></i></div>
-                    <h3>Facebook Posts</h3>
-                    <p>Eye-catching posts designed to increase engagement, shares, and drive traffic to your website. Perfect for promotions, announcements, and community building.</p>
-                </div>
-                <div class="social-service-card fade-in">
-                    <div class="social-icon"><i class="fab fa-instagram"></i></div>
-                    <h3>Instagram Posts</h3>
-                    <p>Visually appealing Instagram content that tells your brand story and connects with your audience. Designed to increase followers and engagement.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Choose Us Section - NEW -->
     <section class="why-choose">
         <div class="container">
@@ -1806,7 +1833,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                     <li><i class="fas fa-check"></i> Contact form + WhatsApp + Email</li>
                     <li><i class="fas fa-check"></i> Blog/news section setup</li>
                     <li><i class="fas fa-check"></i> 15+ premium images</li>
-                    <li><i class="fas fa-check"></i> Social media integration</li>
+                    
                     <li><i class="fas fa-check"></i> 3 months free support</li>
                     <li><i class="fas fa-check"></i> Excluding domain name and hosting Platform</li>
                 </ul>
@@ -1817,7 +1844,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
         </div>
         
         <div class="note" style="margin-top: 40px;">
-            <p><strong>Need something custom?</strong> All prices are starting points. Contact us for a personalized quote based on your specific needs. Social media content packages start from R500/month for 5 custom posts.</p>
+            <p><strong>Need something custom?</strong> All prices are starting points. Contact us for a personalized quote based on your specific needs. Prices DO NOT INCL Hosting and Domain name.</p>
         </div>
     </div>
 </section>
@@ -1930,6 +1957,24 @@ We design clear, user-focused websites that help build trust, attract interest, 
         </div>
     </section>
 
+    <!-- Client Logos Section -->
+    <section class="client-logos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted By Great Businesses</h2>
+            </div>
+            <p class="section-subtitle">We’re proud to have worked with these amazing companies.</p>
+            
+            <div class="logos-grid">
+                <!-- Client 1 -->
+                <a href="https://infinitiwines.co.za/" target="_blank" rel="noopener" class="logo-item">
+                    <img src="images/logo.png" alt="Client 1">
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section - UPDATED -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1992,7 +2037,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                                 <option value="Basic Website (R3800)">Basic Business Website - R3800</option>
                                 <option value="Business Website (R6500)">Business Website - R6500</option>
                                 <option value="Website Updates">Website Updates/Maintenance</option>
-                                <option value="Social Media Content">Social Media Content Creation</option>
+                                
                                 <option value="Not Sure">Not Sure - Need Advice</option>
                             </select>
                         </div>
@@ -2022,7 +2067,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <a href="#services">Web Design Services</a>
-                    <a href="#social-media">Social Media Content</a>
+                    
                     <a href="#who-we-help">Businesses We Help</a>
                     <a href="#pricing">Website Pricing</a>
                     <a href="#contact">Free Quote</a>
@@ -2038,7 +2083,6 @@ We design clear, user-focused websites that help build trust, attract interest, 
                     <a>Website Design & Development</a>
                     <a>Landing Pages</a>
                     <a>Website Updates & Maintenance</a>
-                    <a>Social Media Content Creation</a>
                     <a>Basic SEO Setup</a>
                 </div>
             </div>
