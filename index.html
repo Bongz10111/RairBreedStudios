@@ -1981,7 +1981,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
             <div class="section-title">
                 <h2>Let's Build Your Website</h2>
             </div>
-            <p class="section-subtitle">Ready to attract more customers? Fill out the form below and we'll contact you within 24 hours with a custom quote.</p>
+            <p class="section-subtitle">Ready to attract more customers? Fill out the form below and we'll contact you via WhatsApp with a custom quote.</p>
             
             <div class="contact-container">
                 <div class="contact-info">
@@ -2012,7 +2012,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                 </div>
                 
                 <div class="contact-form fade-in">
-                    <form id="projectForm" onsubmit="sendEmail(); return false;">
+                    <form id="projectForm" onsubmit="sendWhatsApp(); return false;">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="First Name" required>
@@ -2048,7 +2048,7 @@ We design clear, user-focused websites that help build trust, attract interest, 
                         <div class="note">
                             <p><i class="fas fa-clock"></i> We typically respond within 2-4 hours during business hours (Mon-Fri, 9am-5pm).</p>
                         </div>
-                        <button type="submit" class="submit-btn">GET MY FREE QUOTE</button>
+                        <button type="submit" class="submit-btn">GET MY FREE QUOTE VIA WHATSAPP</button>
                     </form>
                 </div>
             </div>
@@ -2098,8 +2098,8 @@ We design clear, user-focused websites that help build trust, attract interest, 
     </a>
 
     <script>
-        // Enhanced sendEmail function
-        function sendEmail() {
+        // WhatsApp form submission function
+        function sendWhatsApp() {
             event.preventDefault();
             
             // Get form values
@@ -2110,47 +2110,20 @@ We design clear, user-focused websites that help build trust, attract interest, 
             const package = document.getElementById('package').value;
             const message = document.getElementById('message').value;
             
-            // Create email content with better formatting
-            const subject = `New Website Quote Request from ${name} - ${business}`;
-            const body = `
-NEW WEBSITE QUOTE REQUEST
-=========================
-
-Client Information:
-------------------
-Name: ${name}
-Business: ${business}
-Email: ${email}
-Phone: ${phone}
-
-Project Details:
-----------------
-Package Interest: ${package}
-
-Project Description:
-${message}
-
-Additional Info:
-----------------
-Website: rairbreedstudios.co.za
-Date: ${new Date().toLocaleDateString('en-ZA')}
-Time: ${new Date().toLocaleTimeString('en-ZA')}
-
-================================
-Thank you for your inquiry!
-We'll contact you within 24 hours.
-            `.trim();
+            // Create WhatsApp message with all details
+            const whatsappMessage = `*New Website Quote Request*%0A%0A*Name:* ${name}%0A*Business:* ${business}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Package:* ${package}%0A%0A*Project Description:*%0A${message}%0A%0A*Date:* ${new Date().toLocaleDateString('en-ZA')}`;
             
-            // Create mailto link
-            const mailtoLink = `mailto:bonganemata@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            // Your WhatsApp number (include country code without +)
+            const phoneNumber = '27614805731';
             
-            // Open email client
-            window.location.href = mailtoLink;
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
             
-            // Show success message
-            setTimeout(function() {
-                alert('Thank you, ' + name + '! Your email client should open with all your details. Just click "Send" to submit your inquiry.\n\nWe\'ll contact you within 24 hours with a custom quote.');
-            }, 500);
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Optional: Show a confirmation message
+            alert('Thank you! Your quote request has been prepared. WhatsApp will open with your details pre-filled. Just press send to submit.');
             
             return false;
         }
@@ -2321,5 +2294,43 @@ We'll contact you within 24 hours.
             console.log('%cWebsite optimized for SEO and conversions', 'color: #ff1493;');
         });
     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
